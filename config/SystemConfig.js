@@ -11,7 +11,7 @@ const config = {
         port: 3306
     },
     redisConfig: {
-        url: "redis://123.57.11.150:6379/"
+        url: "redis://60.205.227.44:6379/"
     },
     mongoConfig: {},
     loggerConfig: {

@@ -19,6 +19,14 @@ let sequelize = new Sequelize(config.mysqlConfig.database, config.mysqlConfig.us
         logger.debug(sql);
     }
 });
+let defineModel = (tableName, column)=> {
+    return sequelize.define(tableName, column, {
+        underscored: true,
+        freezeTableName: true,
+        updatedAt: 'updated_on',
+        createdAt: 'created_on'
+    });
+};
 /**
  * sql查询
  * @param queryStr
@@ -28,7 +36,7 @@ let sequelize = new Sequelize(config.mysqlConfig.database, config.mysqlConfig.us
 let simpleSelect = async(queryStr, conditions) => {
     return await sequelize.query(queryStr, {
         replacements: conditions,
-        type: db.QueryTypes.SELECT
+        type: sequelize.QueryTypes.SELECT
     });
 };
 /**
@@ -40,4 +48,7 @@ let simpleSelect = async(queryStr, conditions) => {
 let transaction = async function (options, autoCallback) {
     return sequelize.transaction(options, autoCallback);
 };
-module.exports = {sequelize: sequelize, simpleSelect: simpleSelect, transaction: transaction};
+module.exports = {
+    sequelize: sequelize, simpleSelect: simpleSelect,
+    transaction: transaction, defineModel: defineModel
+};

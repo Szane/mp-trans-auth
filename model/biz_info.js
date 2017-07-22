@@ -4,66 +4,49 @@
 const db = require('../db/db');
 const Sequelize = require('sequelize');
 
-module.exports = db.defineModel('user_info', {
+module.exports = db.defineModel('biz_info', {
     id: {
         type: Sequelize.BIGINT(11),
         primaryKey: true,
         autoIncrement: true
     },
-    username: {
-        type: Sequelize.STRING(100),
+    user_id: {
+        type: Sequelize.BIGINT(11),
         allowNull: false
     },
-    email: {
-        type: Sequelize.STRING(100),
+    name: {
+        type: Sequelize.STRING(200),
         allowNull: true
     },
     phone: {
         type: Sequelize.STRING(20),
         allowNull: true
     },
-    password: {
-        type: Sequelize.STRING(50),
+    operator: {
+        type: Sequelize.STRING(20),
         allowNull: false
     },
-    name: {
+    jur_per: {
         type: Sequelize.STRING(20),
         allowNull: true
     },
-    gender: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-        defaultValue: 1
-    },
-    avatar: {
-        type: Sequelize.STRING(200),
-        allowNull: true
-    },
-    address: {
-        type: Sequelize.STRING(100),
-        allowNull: true
-    },
-    state: {
-        type: Sequelize.STRING(20),
-        allowNull: true
-    },
-    city: {
+    cdh_code: {
         type: Sequelize.STRING(40),
+        allowNull: true
+    },
+    email: {
+        type: Sequelize.STRING(100),
         allowNull: true
     },
     zipcode: {
         type: Sequelize.INTEGER,
         allowNull: true
     },
-    department_id: {
-        type: Sequelize.BIGINT(11),
+    address: {
+        type: Sequelize.STRING(200),
         allowNull: true
     },
-    wechat_id: {
-        type: Sequelize.STRING(60),
-        allowNull: true
-    },
-    wechat_status: {
+    type: {
         type: Sequelize.INTEGER,
         allowNull: true
     },
@@ -71,24 +54,20 @@ module.exports = db.defineModel('user_info', {
         type: Sequelize.INTEGER,
         allowNull: true
     },
-    type: {
+    inner_flag: {
         type: Sequelize.INTEGER,
         allowNull: true
     },
-    sub_type: {
-        type: Sequelize.INTEGER,
+    ip_info: {
+        type: Sequelize.STRING(40),
         allowNull: true
     },
-    p_biz_id: {
-        type: Sequelize.BIGINT(11),
-        allowNull: true
-    },
-    last_login_on: {
-        type: Sequelize.DATE,
-        allowNull: true
-    },
-    remark: {
+    ship_biz_code: {
         type: Sequelize.STRING(100),
+        allowNull: true
+    },
+    part_id: {
+        type: Sequelize.BIGINT(11),
         allowNull: true
     }
 });
