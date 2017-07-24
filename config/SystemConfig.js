@@ -27,6 +27,18 @@ const config = {
                 }
             ]
         }
+    },
+    MessageQueueServer: {
+        host: "60.205.227.44",
+        port: 8092
+    },
+    NotificationServer: {
+        host: "60.205.227.44",
+        port: 8096
+    },
+    cmsServer: {
+        host: '60.205.227.44',
+        port: 8097
     }
 };
 module.exports = config;

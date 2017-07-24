@@ -24,7 +24,7 @@ module.exports = db.defineModel('biz_info', {
     },
     operator: {
         type: Sequelize.STRING(20),
-        allowNull: false
+        allowNull: true
     },
     jur_per: {
         type: Sequelize.STRING(20),

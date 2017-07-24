@@ -16,7 +16,7 @@ module.exports = {
     SYS_AUTH_TOKEN_ERROR: `当前用户身份不匹配`,
     SYS_MESSAGE_QUEUE_ERROR_MSG: `Web Service Internal Error.`,
     CUST_SIGNUP_PHONE_REGISTERED: `Access token error ,the Api can't be accessed`,
-    CUST_SMS_CAPTCHA_ERROR: `Message queue error!`,
+    CUST_SMS_CAPTCHA_ERROR: `短信验证码错误!`,
     IMG_QUERY_NO_EXIST: `图片不存在`,
     TENANT_NOT_EXIST: `Tenant does not exist`,
     ERROR_PARAMS_EMPTY: "输入内容不能为空",
@@ -39,5 +39,6 @@ module.exports = {
     ERROR_TYPE_INCORRECT: "只能添加与当前用户身份相符的子账号",
     ERROR_CORE_BIZ_ADDED: "该地区已经订阅",
     ERROR_REQUEST_TOO_FAST: "请求过于频繁",
-    ERROR_LOGIN_EXPIRED: "登录信息过期，请重新登录"
+    ERROR_LOGIN_EXPIRED: "登录信息过期，请重新登录",
+    ERROR_LACK_OF_CONFIG: "缺少配置信息"
 };

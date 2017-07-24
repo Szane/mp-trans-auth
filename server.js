@@ -50,6 +50,8 @@ let createServer = ()=> {
         resUtil.resNoAuthorizedError(null, res, next);
     });
 
+    //前台用户注册
+    server.post({path: '/api/user', contentType: 'application/json'}, userInfo.addUser);
     server.get('/api/user', userInfo.getUserInfo);
 
     return (server);

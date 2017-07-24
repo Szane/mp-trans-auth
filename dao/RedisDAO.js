@@ -34,15 +34,18 @@ async function getObjectVal(params) {
     let value = await redisClient.get(params.key);
     return JSON.parse(value);
 }
-function setAsyStringVal(params) {
-    if (params.expired && parseInt(params.expired)) {
-        redisClient.set(params.key, params.value, 'EX', params.expired);
-    } else {
-        redisClient.set(params.key, params.value);
+async function setAsyStringVal(params) {
+    try {
+        if (params.expired && parseInt(params.expired)) {
+            redisClient.set(params.key, params.value, 'EX', params.expired);
+        } else {
+            redisClient.set(params.key, params.value);
+        }
+        return await redisClient.get(params.key);
+    } catch (e) {
+        logger.error(e);
+        return null;
     }
-    redisClient.get(params.key, function (error, result) {
-        logger.debug(error || result);
-    });
 }
 
 async function getStringVal(params) {

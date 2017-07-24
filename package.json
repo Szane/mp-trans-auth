@@ -13,6 +13,7 @@
     "restify": "^5.0.1",
     "restify-cors-middleware": "^1.0.0",
     "restify-errors": "^4.3.0",
-    "sequelize": "^3.30.4"
+    "sequelize": "^3.30.4",
+    "serializer": "^0.0.3"
   }
 }
