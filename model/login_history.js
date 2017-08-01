@@ -9,5 +9,14 @@ module.exports = db.defineModel('login_history', {
         type: Sequelize.BIGINT(11),
         primaryKey: true,
         autoIncrement: true
+    },
+    user_id: {
+        type: Sequelize.BIGINT(11),
+        allowNull: false
+    },
+    type: {
+        type: Sequelize.INTEGER,
+        defaultValue: 0,
+        allowNull: true
     }
 });

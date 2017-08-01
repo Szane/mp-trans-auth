@@ -69,6 +69,7 @@ module.exports = db.defineModel('user_info', {
     },
     status: {
         type: Sequelize.INTEGER,
+        defaultValue: 1,
         allowNull: true
     },
     type: {

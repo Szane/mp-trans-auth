@@ -9,5 +9,17 @@ module.exports = db.defineModel('organiz', {
         type: Sequelize.BIGINT(11),
         primaryKey: true,
         autoIncrement: true
+    },
+    part_id: {
+        type: Sequelize.BIGINT(11),
+        allowNull: false
+    },
+    part_name: {
+        type: Sequelize.STRING(100),
+        allowNull: true
+    },
+    level: {
+        type: Sequelize.BIGINT(11),
+        allowNull: true
     }
 });

@@ -52,10 +52,12 @@ module.exports = db.defineModel('biz_info', {
     },
     status: {
         type: Sequelize.INTEGER,
+        defaultValue: 0,
         allowNull: true
     },
     inner_flag: {
         type: Sequelize.INTEGER,
+        defaultValue: 0,
         allowNull: true
     },
     ip_info: {
